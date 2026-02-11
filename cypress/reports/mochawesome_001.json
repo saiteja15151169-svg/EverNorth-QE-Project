@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-02-11T06:04:55.257Z",
+    "end": "2026-02-11T06:05:01.337Z",
+    "duration": 6080,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a28de624-a165-4f21-93b1-578c4773ea2c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_Testing.cy.ts",
+      "file": "cypress\\e2e\\API_Testing.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bf726b5a-50b4-401b-a4e5-c81d757e4efd",
+          "title": "HTTP Requests - FakeStore API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET Call",
+              "fullTitle": "HTTP Requests - FakeStore API GET Call",
+              "timedOut": null,
+              "duration": 590,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('GET', 'https://fakestoreapi.com/products')\n    .its('status')\n    .should('eq', 200);",
+              "err": {},
+              "uuid": "0d7fca89-61a5-4401-8ad6-63b8a3652688",
+              "parentUUID": "bf726b5a-50b4-401b-a4e5-c81d757e4efd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST Call",
+              "fullTitle": "HTTP Requests - FakeStore API POST Call",
+              "timedOut": null,
+              "duration": 4574,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n    method: 'POST',\n    url: 'https://fakestoreapi.com/products',\n    body: {\n        title: \"Test Product\",\n        price: 100,\n        description: \"This is a test product\",\n        image: \"https://i.pravatar.cc\",\n        category: \"electronics\"\n    }\n})\n    .its('status')\n    .should('eq', 200);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 201 to equal 200",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 201 to equal 200\n    at Context.eval (webpack://cypress-e2e-saucedemo/./cypress/e2e/API_Testing.cy.ts:24:13)",
+                "diff": "- 201\n+ 200\n"
+              },
+              "uuid": "f47c1b5f-c9eb-4d33-882e-ac78b1286e0d",
+              "parentUUID": "bf726b5a-50b4-401b-a4e5-c81d757e4efd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PUT Call",
+              "fullTitle": "HTTP Requests - FakeStore API PUT Call",
+              "timedOut": null,
+              "duration": 345,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n    method: 'PUT',\n    url: 'https://fakestoreapi.com/products/1',\n    body: {\n        title: \"Updated Product\",\n        price: 150\n    }\n})\n    .its('status')\n    .should('eq', 200);",
+              "err": {},
+              "uuid": "277d85fa-13da-402c-be14-ccaeb224c3a0",
+              "parentUUID": "bf726b5a-50b4-401b-a4e5-c81d757e4efd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE Call",
+              "fullTitle": "HTTP Requests - FakeStore API DELETE Call",
+              "timedOut": null,
+              "duration": 331,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n    method: 'DELETE',\n    url: 'https://fakestoreapi.com/products/1'\n})\n    .its('status')\n    .should('eq', 200);",
+              "err": {},
+              "uuid": "88ac7a3e-4025-4288-b67c-c067eb52dae9",
+              "parentUUID": "bf726b5a-50b4-401b-a4e5-c81d757e4efd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0d7fca89-61a5-4401-8ad6-63b8a3652688",
+            "277d85fa-13da-402c-be14-ccaeb224c3a0",
+            "88ac7a3e-4025-4288-b67c-c067eb52dae9"
+          ],
+          "failures": [
+            "f47c1b5f-c9eb-4d33-882e-ac78b1286e0d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5840,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

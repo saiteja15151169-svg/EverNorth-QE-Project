@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-02-11T06:48:24.248Z",
+    "end": "2026-02-11T06:48:43.808Z",
+    "duration": 19560,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2bb4f304-5aa1-45b0-ad22-b950a1c8ae2b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CheckOut-Flow.cy.ts",
+      "file": "cypress\\e2e\\CheckOut-Flow.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "55424524-0501-4b5e-bdb7-ff37788697e9",
+          "title": "SauceDemo Checkout Flow",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adding Products",
+              "fullTitle": "SauceDemo Checkout Flow Adding Products",
+              "timedOut": null,
+              "duration": 15574,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#item_4_title_link').click();\ncy.get('#add-to-cart').click();\ncy.wait(2000);\ncy.get('#back-to-products').click();\ncy.wait(1500);\ncy.get('#item_0_title_link').click();\ncy.get('button[data-test=\"add-to-cart\"]').click();\ncy.get('#back-to-products').click();\ncy.get('[data-test=\"shopping-cart-link\"]').click();\n//going to cart\ncy.get('span.title').should('contain.text', 'Your Cart');\ncy.wait(2000);\ncy.get('button#checkout').click();\n//adding Information\ncy.get('span.title').should('contain.text', 'Checkout: Your Information');\ncy.get('input[placeholder=\"First Name\"]').type('Magnus')\n    .should('have.value', 'Magnus');\ncy.get('input[placeholder=\"Last Name\"]').type('Carlsen')\n    .should('have.value', 'Carlsen');\ncy.get('input[placeholder=\"Zip/Postal Code\"]').type('500075')\n    .should('have.value', 500075);\ncy.get('input#continue').click();\n//verifying checkout overview\ncy.get('span.title').should('contain.text', 'Checkout: Overview');\ncy.get('button#finish').click();\n//confirming whether order is placed or not\ncy.get('h2.complete-header').should('contain', 'Thank you for your order!');\ncy.wait(2000);\n//moving back to product page\ncy.get('button#back-to-products').click();\n//Going Back to Login Page\ncy.get('button#react-burger-menu-btn').click();\ncy.get('div > nav > a#logout_sidebar_link').click();\n//Verifying the url \ncy.url().should('eq', 'https://www.saucedemo.com/');",
+              "err": {},
+              "uuid": "9e614e6f-3014-4a01-a51a-c765ff4b5797",
+              "parentUUID": "55424524-0501-4b5e-bdb7-ff37788697e9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9e614e6f-3014-4a01-a51a-c765ff4b5797"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15574,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
