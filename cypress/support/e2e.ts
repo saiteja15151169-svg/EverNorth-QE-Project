@@ -22,3 +22,4 @@ import './commands'
 // Prevent app errors from failing tests.
 // This keeps beginner tests stable while you learn.
 Cypress.on("uncaught:exception", () => false);
+import 'cypress-mochawesome-reporter/register';
